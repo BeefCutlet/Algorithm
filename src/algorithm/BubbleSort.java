@@ -111,6 +111,6 @@ public class BubbleSort {
 		sort4(array, array.length);
 		
 		System.out.println(Arrays.toString(array));
-		//결과 : 1, 2, 3, 5, 6, 7
+		//결과 : 1, 3, 4, 6, 7, 8, 9
 	}
 }
