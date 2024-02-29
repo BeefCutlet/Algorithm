@@ -1,4 +1,4 @@
-package algorithm.baekjoon.baekjoon;
+package algorithm.quiz.baekjoon;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
