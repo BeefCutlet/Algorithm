@@ -1,6 +1,6 @@
 package algorithm.collection;
 
-public class Stack {
+public class CustomStack {
 
 	//스택용 배열
 	private int[] stk;
@@ -21,7 +21,7 @@ public class Stack {
 	
 	//생성자 : 최대 용량 설정, 포인터를 0에 위치, 스택용 배열의 길이를 최대 용량만큼으로 하여 생성
 	//=> 메모리 부족 예외 발생 시 최대 용량을 다시 0으로 설정
-	public Stack(int maxlen) {
+	public CustomStack(int maxlen) {
 		ptr = 0;
 		capacity = maxlen;
 		try {
