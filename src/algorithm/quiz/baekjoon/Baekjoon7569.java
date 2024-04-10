@@ -16,7 +16,7 @@ public class Baekjoon7569 {
     private static int[] Y = {0, 1, 0, -1, 0, 0};
     private static int[] Z = {0, 0, 0, 0, 1, -1};
     private static int[][][] box;
-    private static Queue<Point> queue = new LinkedList<>();
+    private static Queue<PointXYZ> queue = new LinkedList<>();
 
     public static void main(String[] args) throws Exception {
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
@@ -33,7 +33,7 @@ public class Baekjoon7569 {
                 for (int k = 1; k <= M; k++) {
                     box[i][j][k] = Integer.parseInt(st.nextToken());
                     if (box[i][j][k] == 1) {
-                        queue.add(new Point(i, j, k));
+                        queue.add(new PointXYZ(i, j, k));
                     }
                 }
             }
@@ -44,10 +44,10 @@ public class Baekjoon7569 {
 
     private static int bfs() {
         while (!queue.isEmpty()) {
-            Point point = queue.poll();
-            int height = point.height;
-            int row = point.row;
-            int column = point.column;
+            PointXYZ pointXYZ = queue.poll();
+            int height = pointXYZ.height;
+            int row = pointXYZ.row;
+            int column = pointXYZ.column;
 
             for (int i = 0; i < 6; i++) {
                 int moveHeight = height + Z[i];
@@ -55,7 +55,7 @@ public class Baekjoon7569 {
                 int moveColumn = column + Y[i];
 
                 if (isValid(moveHeight, moveRow, moveColumn)) {
-                    queue.add(new Point(moveHeight, moveRow, moveColumn));
+                    queue.add(new PointXYZ(moveHeight, moveRow, moveColumn));
                     box[moveHeight][moveRow][moveColumn] = box[height][row][column] + 1;
                 }
             }
@@ -88,12 +88,12 @@ public class Baekjoon7569 {
     }
 }
 
-class Point {
+class PointXYZ {
     int height;
     int row;
     int column;
 
-    public Point(int height, int row, int column) {
+    public PointXYZ(int height, int row, int column) {
         this.height = height;
         this.row = row;
         this.column = column;
