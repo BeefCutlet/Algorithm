@@ -6,7 +6,7 @@ import java.util.ArrayList;
 import java.util.StringTokenizer;
 
 /**
- * 그래프 이론, 그래프 탐색, 너비 우선 탐색, 깊이 우선 탐색
+ * 사용 알고리즘 : 그래프 이론, 그래프 탐색, 너비 우선 탐색, 깊이 우선 탐색
  * 노드를 연결 리스트로 만든 뒤, DFS 수행
  */
 public class Baekjoon11724 {
